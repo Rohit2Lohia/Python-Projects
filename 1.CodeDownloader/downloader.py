@@ -1,6 +1,6 @@
 from urllib import request
 
-file_url = input('Enter the website from where you want to download source code: ')
+file_url = input('Enter website url: ')
 
 def download_file_information(url):
     #open url file_url
