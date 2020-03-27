@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
+from django.conf import settings
+from articles import views as article_views
 
 urlpatterns = [
     # ^ symbol means the begining of the string
@@ -25,7 +29,11 @@ urlpatterns = [
     # r is used to signify that the string is a raw string i.e \t is consider as \t nothing else
 
     path(r'admin/', admin.site.urls),
+    path(r'accounts/', include('accounts.urls')),
     path(r'articles/', include('articles.urls')),
     path(r'about/', views.about),
-    path('', views.homepage), #point to home page
+    path('', article_views.article_list, name="home"), #point to home page
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

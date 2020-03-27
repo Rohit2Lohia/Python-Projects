@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+   <h1>SignUp</h1>
+   <p>Welcome to the sign up page!</p><br>
+   <!-- Always remember to put a space b/w url 'page_to_redirect' -->
+   <form class="site-form" action="{% url 'accounts:signup' %}" method="POST">
+      {% csrf_token %}
+      <table>
+         {{ form.as_table }}
+         <tr>
+            <td></td>
+            <td><input type="submit" name="submit" value="SignUp" /></td>
+         </tr>
+      </table>
+   </form>
+
+{% endblock %}

@@ -22,4 +22,19 @@ The import things to understand here are:
 
 6. To show our other applications in the admin area we need to edit the admin area of that particular application.
 
-7. 
+7. To show the data that we stored in out database in this case in articles:
+   # here 'articles' is  a dictonary of articles
+   # to pass anything in a html we need to send it thorough a dictonarty variable
+   # the name is not necessarily articles it can be anything. (ref views.py in articles)
+
+8. In the html:
+   {% code %} to write python code but not output any data
+   {{ code }} to output any data
+
+9.  Previously what we did that for every html page we were coding the same
+   header and footer repeatedly so if in any point of time there is a need to change
+   content or style of the header then it will be hell of a job to do. So instead
+   of that we will create a base_layout.html in the template folder of the main project
+   directory and rest of other views will inherit for it.
+
+   lets do it!!
