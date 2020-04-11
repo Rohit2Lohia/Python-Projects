@@ -7,6 +7,15 @@
    <form class="site-form" action="{% url 'accounts:signup' %}" method="POST">
       {% csrf_token %}
       <table>
+         <tr>
+            <th>
+               <label for="id_email">Email:</label>
+            </th>
+            <td>
+               <input type="email" name="email" maxlength="200" autofocus="" required="" id="id_email">
+            <br>
+            </td>
+         </tr>
          {{ form.as_table }}
          <tr>
             <td></td>

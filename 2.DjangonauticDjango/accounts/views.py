@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 # Create your views here.
 def signup_view(request):
@@ -10,6 +13,10 @@ def signup_view(request):
             user=form.save()
             # log the user in
             login(request,user)
+            # sending them a mail
+            message='Now you can create your own blog entries! congratulations.'
+            to=request.POST['email']
+            send_mail('Welcome Onboard',message, settings.EMAIL_HOST_USER, [to],fail_silently=True)
             return redirect('articles:list')
     else:
         form=UserCreationForm()

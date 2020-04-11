@@ -22,6 +22,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 from articles import views as article_views
 
+app_name = 'main'
+
 urlpatterns = [
     # ^ symbol means the begining of the string
     # $ symbol means the end of a string
@@ -30,9 +32,10 @@ urlpatterns = [
 
     path(r'admin/', admin.site.urls),
     path(r'accounts/', include('accounts.urls')),
-    path(r'articles/', include('articles.urls')),
+    path(r'articles/', include('articles.urls'), name="artl"),
     path(r'about/', views.about),
-    path('', article_views.article_list, name="home"), #point to home page
+    # path('', article_views.article_list, name="home"), #point to home page
+    path(r'', views.homepage, name="home"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

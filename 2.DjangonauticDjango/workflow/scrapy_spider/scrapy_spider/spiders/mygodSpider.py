@@ -3,7 +3,7 @@ from scrapy.http import FormRequest
 from scrapy.utils.response import open_in_browser
 
 class FirstSpider(scrapy.Spider):
-    name="FirstSpider"
+    # name="FirstSpider"
 
     find_video='https://en.savefrom.net/savefrom.php'
     start_urls = [
@@ -31,7 +31,7 @@ class FirstSpider(scrapy.Spider):
 
     def start_scraping(self, response):
         # Parse the downloading link of the video
-        open_in_browser(response)
+        view(response)
         print("In Succesfully!!!!!!!!!!!!!")
         for lk in response.css('div.info-box'):
             yield {
@@ -39,23 +39,3 @@ class FirstSpider(scrapy.Spider):
                 'video_link': lk.css('div.def-btn-box::attr(href)').extract_first()
             }
             print("Done Succesfully!!!!!!!!!!!!!")
-
-
-
-
-# class FirstSpider(scrapy.Spider):
-#     name="FirstSpider"
-#
-#     def start_requests(self):
-#         urls = [
-#             'https://en.savefrom.net/1-youtube-video-downloader-1/',
-#         ]
-#         for url in urls:
-#             yield scrapy.Request(url=url, callback=self.parse)
-#
-#     def parse(self, response):
-#         page = response.url.split("/")[-2]
-#         filename='quotes-%s.html'%page
-#         with open(filename,'wb') as f:
-#             f.write(response.body)
-#         self.log('Saved file %s'%filename)
