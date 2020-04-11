@@ -26,8 +26,8 @@ SECRET_KEY = 'r80k4t5s6h+_v^s8g#84@nfbjqk7u*wt3^qebfs0&2pxnv#d6h'
 DEBUG = True
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = '2016dib002@gmail.com'
-EMAIL_HOST_PASSWORD = 'rohit@1998'
+EMAIL_HOST_USER = 'EMAIL-HERE'
+EMAIL_HOST_PASSWORD = 'PASSWORD-HERE'
 EMAIL_PORT=  587
 EMAIL_USER_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
