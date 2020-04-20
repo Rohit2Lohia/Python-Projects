@@ -1,4 +1,4 @@
-# There are a sets of projects that will make your work Easy
+# Projects:
 
 ### 1. CodeDownloader: Written a few scripts to scrap the internet to do some really cool.
 - Script to [automatically download youtube video using selenium](https://github.com/Rohit2Lohia/Python-Projects/tree/master/1.CodeDownloader/Download%20youtube%20video%20using(Selenium)). 
