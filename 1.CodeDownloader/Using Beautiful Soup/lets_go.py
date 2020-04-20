@@ -18,6 +18,7 @@ for title in title_tags[:5]:
 #         find_video
 #     ]
 #         # for url in urls:
+
 #         #     yield scrapy.Request(url=url, callback=self.parse)
 #
 #     def parse(self, response):
