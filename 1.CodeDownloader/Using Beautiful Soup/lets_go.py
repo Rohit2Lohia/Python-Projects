@@ -6,8 +6,6 @@ title_tags = doc.find_all(class_='prod-ProductTitle')
 for title in title_tags[:5]:
     print(title.text.strip())
 
-
-
 # import scrapy
 # from scrapy.http import FormRequest
 # from scrapy.utils.response import open_in_browser

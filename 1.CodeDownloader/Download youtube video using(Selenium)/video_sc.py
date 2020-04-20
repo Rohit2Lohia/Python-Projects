@@ -2,7 +2,6 @@
 # Make sure you have selenium and chromedriver installed in your device
 # You also need to add chromedriver to PATH in environmental variable
 # And you are good to GO!
-
 from selenium import webdriver
 from selenium.webdriver.support.ui import  WebDriverWait
 from selenium.webdriver.common.by import By
